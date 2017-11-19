@@ -1,17 +1,18 @@
+
 #!/usr/bin/env python3
 
 import sys
 
 try:
-    if len(sys.argv) == 1:
-        raise IndexError()
     list1 = sys.argv[1::]
     for x in list1:
         n, salary = x.split(':')
         salary = int(salary)
         a = 0.165 * salary
         b = salary - a - 3500
-        if b <= 1500:
+        if b < 0:
+            c = 0
+        elif b > 0 and b <= 1500:
             c = b * 0.03 - 0
         elif b > 1500 and b <= 4500:
             c = b * 0.1 - 105
@@ -25,12 +26,8 @@ try:
             c = b * 0.35 - 5505
         else:
             c = b * 0.45 - 13505
-        if b < 0:
-            get = salary - a
-            print(n + ':' + "{:.2f}".format(get)) # print(n + ':' + format(get, {.2f}))
-        else:
-            get = salary - a - c
-            print(n + ':' + '"{:.2f}".format(get))
+        get = salary - a - c
+        print(n + ':' + '"{:.2f}".format(get))
 except ValueError:
     print("Parameter Error")
 except IndexError:
