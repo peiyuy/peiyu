@@ -1,4 +1,4 @@
-#！/usr/bin/env python3
+ ##！/usr/bin/env python3
 
 import sys
 
@@ -7,7 +7,6 @@ try:
         raise IndexError()
     s = int(sys.argv[1])
     b = s - 3500
-    global c
     if b <= 1500:
         c = b * 0.03 - 0
     elif b > 1500 and b <= 4500:
@@ -22,7 +21,7 @@ try:
         c =  b * 0.35 - 5505
     else:
         c = b * 0.45 - 13505
-    print("{:.2f"}".format(c))
+    print("{:.2f"}".format(c)) # print(format(c, {.2f})
 except ValueError:
     print("Parameter Error")
 except IndexError:
