@@ -33,7 +33,7 @@ def func2():
         elif salary > JiShuH:
             a = JiShuH * ratio
         else:
-            ratio += r
+            a = salary * ratio
         b = salary - a - 3500
         if b < 0:
             c = 0
