@@ -1,0 +1,13 @@
+易错点：
+java的整除原则，俗称integer division
+如果其中有一个是double，按照double方法
+
+public static doublle sumTo(int n) {
+    if (n < 0) {
+        throw new IllegalArgumentException();
+    } else if (n == 0) {
+        return 0.0;
+    } else {
+        return sumTo(n - 1) + (1.0 / n);
+    }
+}
