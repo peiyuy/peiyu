@@ -22,5 +22,10 @@ def tuling_reply(msg):
     reply = get_response(msg['Text'])
     return reply or defaultReply
 
+# 只要对方发的是图片就会回复sad
+@itchat.msg_register(itchat.content.PICTURE)
+def reply(msg):
+    return 'sad'
+
 itchat.auto_login(hotReload=True)
 itchat.run()
